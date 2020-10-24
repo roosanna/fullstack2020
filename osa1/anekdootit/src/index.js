@@ -7,6 +7,7 @@ const App = (props) => {
   const chooseRandom = () => {
     let random = Math.floor(Math.random()*props.anecdotes.length)
     setSelected(random)
+    console.log(random)
   }
 
   return (
