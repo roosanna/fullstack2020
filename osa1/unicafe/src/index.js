@@ -25,17 +25,18 @@ const Statistics = (props) => {
   let neutral = props.neutral
   let bad = props.bad
   let sum = good + neutral + bad
+  let positive = good / sum * 100 + " %"
 
   if (sum > 0) {
     return (
       <table>
         <tbody>
-        <StatisticLine text="good" value={props.good}/>
-        <StatisticLine text="neutral" value={props.neutral}/>
-        <StatisticLine text="bad" value={props.bad}/>
+        <StatisticLine text="good" value={good}/>
+        <StatisticLine text="neutral" value={neutral}/>
+        <StatisticLine text="bad" value={bad}/>
         <StatisticLine text="all" value={sum}/>
         <StatisticLine text="average" value={(good - bad) / sum}/>
-        <StatisticLine text="positive" value={good / sum * 100}/>
+        <StatisticLine text="positive" value={positive}/>
         </tbody>
       </table>
       
