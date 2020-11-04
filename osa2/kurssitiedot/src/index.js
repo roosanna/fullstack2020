@@ -1,52 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const Course = ({courses}) => {
-  return (
-    <div>
-      {courses.map((course) =>
-          <span key={course.id}>
-            <h3>{course.name}</h3>
-            <Exercises course={course}/>
-            <Total course={course}/>
-          </span>
-        )}
-    </div>
-  )
-}
-
-const Exercises = ({course}) => {
-  return (
-    <div>
-      {course.parts.map((part) => 
-        <p key={part.id}>
-          {part.name}{' '}{part.exercises}
-        </p>
-      )}
-    </div>
-  )
-}
-
-const Total = ({course}) => {
-  return (
-    <b>
-    <p key={course.id}>
-      total of {course.parts.reduce((acc, curr) => 
-        acc + curr.exercises, 0)} exercises
-    </p>
-    </b>
-  )
-}
-
-
-const Courses = ({courses}) => {
-  //console.log(course)
-  return (
-    <div>
-      <Course courses={courses}/>
-    </div>
-  )
-}
+import Course from './course'
 
 const App = () => {
   const courses = [
@@ -97,7 +51,7 @@ const App = () => {
   return (
     <div>
       <h2>Web development curriculum</h2>
-      <Courses courses={courses}/>
+      <Course courses={courses}/>
     </div>
   )
 }
