@@ -82,7 +82,12 @@ const App = () => {
       <h2>Phonebook</h2>
       <Filter filter={filter} handleFilter={handleFilter}/>
       <h3>add a new</h3>
-      <PersonForm addNote={addNote} newName={newName} newNumber={newNumber} handleNameChange={handleNameChange} handleNumberChange={handleNumberChange}/>
+      <PersonForm
+        addNote={addNote}
+        newName={newName}
+        newNumber={newNumber}
+        handleNameChange={handleNameChange}
+        handleNumberChange={handleNumberChange}/>
       <h3>Numbers</h3>
       <Persons filter={filter} persons={persons}/>
     </div>
